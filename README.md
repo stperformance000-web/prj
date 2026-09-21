@@ -29,3 +29,10 @@ print(filter_by_state(test_data, "CANCELED"))
 print(sort_by_date(test_data))
 ```
 
+## Тестирование
+В проекте реализованы автоматические тесты с использованием библиотеки `pytest`.
+Для запуска тестов и генерации HTML-отчета о покрытии кода (coverage) выполните команды:
+```powershell
+\$env:PYTHONPATH="."
+poetry run pytest --cov=src --cov-report=html
+```
