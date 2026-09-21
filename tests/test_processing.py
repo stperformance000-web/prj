@@ -1,4 +1,5 @@
 import pytest
+
 from src.processing import filter_by_state, sort_by_date
 
 
@@ -32,9 +33,3 @@ def test_sort_by_date_ascending(sample_transactions: list[dict]) -> None:
     assert sorted_data[0]["id"] in [2, 5]  # Самые старые первыми
     assert sorted_data[-1]["id"] == 4  # Самая свежая последняя
 
-
-def test_sort_by_date_ascending(sample_transactions: list[dict]) -> None:
-    """Тестирование сортировки по дате по возрастанию."""
-    sorted_data = sort_by_date(sample_transactions, reverse=False)
-    assert sorted_data[0]["id"] in [2, 5]  # Самые старые первыми
-    assert sorted_data[-1]["id"] == 4  # Самая свежая последняя
